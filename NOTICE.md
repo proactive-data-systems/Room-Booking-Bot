@@ -1,5 +1,5 @@
 
-RoomBooking-AdaptiveCards 
+Room-Booking-Bot
 
 Copyright (c) 2020 Cisco Systems, Inc. and/or its affiliates
 

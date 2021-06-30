@@ -2,12 +2,24 @@
 
 The room booking bot is designed for easing the process of booking a room via Webex Teams. The bot is integrated with Microsoft Outlook Calendar and Webex Teams with the help of REST APIs and provides a form based process for booking, cancelling, checking schedules of rooms and also user's own schedule for the day.
 
+## Here how it works:
+
+- You can check what the bot can do using `help` command.
+    ![help command](./help-command.png)
+
+- For booking a room you start with `book` command. Fill in the details. And click Book. 
+    ![book command](./book-command.png)
+
+- You should receive confirmation message and email shortly.
+    ![book confirmation](./book-confirmation.png)
+
+- Your schedule for the day can be checked using `my bookings` command.
+    ![schedule command](./schedule.png)
+
 ## Technology used
 Languages: JavaScript (Node.js).  
 Frameworks: Botkit.  
 Status:  v1.0
-
-## Use Case Description
 
 
 ## Installation
@@ -56,6 +68,8 @@ Status:  v1.0
     ```sh
     npm start
     ```
+7. Output should be like this.
+    ![output](./run-output.png)
 
 ## Getting help
 

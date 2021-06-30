@@ -1,0 +1,144 @@
+{   
+    "$schema":"http://adaptivecards.io/schemas/1.2.0/adaptive-card.json",    
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Book Room",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "RichTextBlock",
+            "inlines": [
+                {
+                    "type": "TextRun",
+                    "text": "Select room to book:",
+                    "weight": "Bolder"
+                }
+            ],
+            "id": "select_room_text"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "placeholder":"Select a room",
+            "choices": [],
+            "id": "room_list"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "RichTextBlock",
+                    "inlines": [
+                        {
+                            "type": "TextRun",
+                            "text": "Select booking date:",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "id": "text_select_date"
+                }
+            ],
+            "id": "book_details_date"
+        },
+        {
+            "type": "Input.Date",
+            "id": "book_date"
+        },
+        {
+            "type": "Container",
+            "id": "book_details_time",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "RichTextBlock",
+                                    "inlines": [
+                                        {
+                                            "type": "TextRun",
+                                            "text": "Start Time:",
+                                            "weight": "Bolder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Input.Time",
+                                    "id": "start_time"
+                                }
+                            ],
+                            "id": "book_time_column1"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "RichTextBlock",
+                                    "inlines": [
+                                        {
+                                            "type": "TextRun",
+                                            "text": "End Time:",
+                                            "weight": "Bolder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Input.Time",
+                                    "id": "end_time"
+                                }
+                            ],
+                            "id": "book_time_column2"
+                        }
+                    ],
+                    "id": "book_time_columnset"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "meeting_title_container",
+            "items": [
+                {
+                    "type": "RichTextBlock",
+                    "inlines": [
+                        {
+                            "type": "TextRun",
+                            "text": "Add a meeting title (optional):",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "id": "add_title_text"
+                }
+            ]
+        },
+        {
+            "type": "Input.Text",
+            "placeholder": "Enter meeting title here.",
+            "id": "meeting_title"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Book",
+                    "style": "positive"
+                }
+            ]
+        },
+        {
+            "type":"Input.Text",
+            "id":"card_type",
+            "isVisible":false,
+            "value":"bookCard"
+        }
+    ]
+}

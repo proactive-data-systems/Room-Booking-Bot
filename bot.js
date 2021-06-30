@@ -10,28 +10,11 @@ const { Botkit} = require('botkit');
 const { WebexAdapter } = require('botbuilder-adapter-webex'); // Import a platform-specific adapter for webex.
 
 // Custom Made Modules
+var checks=require('./checks.js');
 var backend=require('./backend/backend.js');
 var global_vars=require('./common_vars.js');
 
-if (!process.env.ACCESS_TOKEN) {
-    console.log("Could not start as this bot requires a Webex Teams API access token.");
-    console.log("Please invoke with an ACCESS_TOKEN environment variable");
-    console.log("Example: ");
-    console.log("> ACCESS_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node bot.js");
-    process.exit(1);
-}
-if (!process.env.PUBLIC_URL) {
-    console.log("Could not start as this bot must expose a public endpoint.");
-    console.log("Please add env variable PUBLIC_URL on the command line");
-    console.log("Example: ");
-    console.log("> ACCESS_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node bot.js");
-    process.exit(1);
-}
-if (!process.env.LIMIT_TO_DOMAIN) {
-    console.log("Warning bot should have a limit to domain. Bot may behave unexpectedly.");
-    console.log("Please add env variable LIMIT_TO_DOMAIN on the command line or .env file");
-    console.log("For example check .env file.");
-}
+checks.performEnvChecks(process);
 
 var env = process.env.NODE_ENV || "development";
 
